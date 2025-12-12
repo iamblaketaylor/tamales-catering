@@ -5,12 +5,12 @@
   <title>Tamales Mexicanos Catering | Port Coquitlam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Award-winning tamale catering in Port Coquitlam. Handmade, authentic tamales. Quick catering request form." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Modern font pairing: Headings (Manrope) + Body (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -38,31 +38,25 @@
   </script>
 
   <style>
+    /* Typography (biggest "no more Word doc" upgrade) */
+    html, body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3 {
+      font-family: Manrope, ui-sans-serif, system-ui;
+      letter-spacing: -0.02em;
+    }
+    h1 { letter-spacing: -0.03em; line-height: 1.05; }
+    h2 { line-height: 1.15; }
+    p { line-height: 1.6; }
+
+    /* Animation */
     @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fade-in .7s ease-out both; }
-html, body {
-  font-family: Inter, ui-sans-serif, system-ui;
-  line-height: 1.55;
-}
-
-h1, h2, h3 {
-  font-family: Manrope, ui-sans-serif, system-ui;
-  letter-spacing: -0.02em;
-}
-
-h1 {
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-
-h2 {
-  line-height: 1.15;
-}
-
-p {
-  line-height: 1.6;
-}
-
   </style>
 </head>
 
@@ -71,36 +65,38 @@ p {
   <!-- MOBILE STICKY CTA -->
   <div class="fixed inset-x-0 bottom-0 z-50 border-t border-tam-border bg-tam-bg/95 px-4 py-2 shadow-[0_-8px_24px_rgba(0,0,0,0.18)] sm:hidden dark:bg-slate-900/95">
     <a href="#catering"
-       class="block w-full text-center rounded-full bg-tam-primary px-4 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark transition">
+       class="block w-full text-center rounded-full bg-tam-primary px-4 py-3 text-[0.85rem] font-semibold tracking-wide text-white shadow-md hover:bg-tam-primaryDark transition">
       Get Catering Info
     </a>
   </div>
 
   <!-- HEADER -->
-  <header class="bg-tam-bg/90 backdrop-blur border-b border-tam-border dark:bg-slate-950/90">
+  <header class="sticky top-0 z-40 bg-tam-bg/90 backdrop-blur border-b border-tam-border dark:bg-slate-950/90">
     <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-3">
-  <img
-    src="/images/logo.png"
-    alt="Tamales Mexicanos"
-    class="h-9 w-auto max-w-[140px] object-contain"
-    loading="lazy"
-  />
-  <div class="leading-tight">
-    <p class="text-sm font-extrabold tracking-tight">Tamales Mexicanos</p>
-    <p class="text-[0.7rem] font-semibold text-slate-600 dark:text-slate-400">
-      Catering • Port Coquitlam
-    </p>
-  </div>
-</a>
+      <!-- Brand lockup (logo + name + subtitle) -->
+      <a href="#top" class="flex items-center gap-3">
+        <img
+          src="/images/logo.png"
+          alt="Tamales Mexicanos"
+          class="h-9 w-9 rounded-xl object-contain bg-white p-1 shadow-sm border border-tam-border dark:bg-slate-900"
+          loading="lazy"
+        />
+        <div class="leading-tight">
+          <p class="text-sm font-extrabold tracking-tight">Tamales Mexicanos</p>
+          <p class="text-[0.7rem] font-semibold text-slate-600 dark:text-slate-400">
+            Catering • Port Coquitlam
+          </p>
+        </div>
+      </a>
+
       <div class="flex items-center gap-3">
         <button id="darkToggle"
-                class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
           <span class="dark:hidden">🌙 Dark</span>
           <span class="hidden dark:inline">☀️ Light</span>
         </button>
         <a href="#catering"
-           class="hidden sm:inline-flex items-center justify-center rounded-full bg-tam-primary px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-tam-primaryDark transition">
+           class="hidden sm:inline-flex items-center justify-center rounded-full bg-tam-primary px-4 py-2 text-[0.8rem] font-semibold tracking-wide text-white shadow-md hover:bg-tam-primaryDark transition">
           Get Catering Info
         </a>
       </div>
@@ -110,56 +106,54 @@ p {
   <main id="top" class="mx-auto max-w-6xl px-4">
 
     <!-- HERO -->
-    <section class="py-10 md:py-14">
-      <div class="grid gap-8 md:grid-cols-2 md:items-center">
-        <div class="fade-in space-y-4">
+    <section class="py-14 md:py-20">
+      <div class="grid gap-10 md:grid-cols-2 md:items-center">
+        <div class="fade-in space-y-5">
           <div class="inline-flex items-center gap-2 rounded-full bg-tam-primarySoft px-3 py-1 text-[0.72rem] font-semibold text-tam-primary dark:bg-slate-900">
             <span class="inline-block h-2 w-2 rounded-full bg-tam-accentYellow"></span>
             Canadian Choice Award Winner (2025)
           </div>
 
-          <h1 class="text-[2.1rem] md:text-[2.6rem] font-extrabold leading-[1.05] tracking-tight">
+          <h1 class="text-[2.1rem] md:text-[2.7rem] font-extrabold leading-[1.05] tracking-tight">
             Stress-Free Tamale Catering for Groups &amp; Events
           </h1>
 
-          <p class="text-[0.95rem] md:text-[1rem] text-slate-700 dark:text-slate-300">
+          <p class="max-w-[38rem] text-[0.95rem] md:text-[1rem] text-slate-700 dark:text-slate-300">
             Handmade, authentic tamales that are easy to serve and loved by everyone.
           </p>
 
           <ul class="grid gap-1.5 text-[0.85rem] font-medium text-slate-700 dark:text-slate-300">
-            <li class="flex gap-2"><span class="font-semibold text-tam-primary">✔</span> Delivered to you</li>
-            <li class="flex gap-2"><span class="font-semibold text-tam-primary">✔</span> Meat, vegetarian &amp; vegan options</li>
-            <li class="flex gap-2"><span class="font-semibold text-tam-primary">✔</span> 10 to 100+ guests</li>
+            <li class="flex gap-2"><span class="text-tam-primary/80 font-semibold">✔</span> Delivered to you</li>
+            <li class="flex gap-2"><span class="text-tam-primary/80 font-semibold">✔</span> Meat, vegetarian &amp; vegan options</li>
+            <li class="flex gap-2"><span class="text-tam-primary/80 font-semibold">✔</span> 10 to 100+ guests</li>
           </ul>
 
           <div class="flex flex-wrap gap-3 pt-1">
             <a href="#catering"
-               class="inline-flex items-center justify-center rounded-full bg-tam-primary px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark transition">
+               class="inline-flex items-center justify-center rounded-full bg-tam-primary px-6 py-3 text-[0.85rem] font-semibold tracking-wide text-white shadow-md hover:bg-tam-primaryDark transition">
               Get Catering Info
             </a>
             <a href="#reviews"
-               class="inline-flex items-center justify-center rounded-full border-2 border-tam-primary bg-white px-5 py-3 text-sm font-semibold text-tam-primary hover:bg-tam-primarySoft transition dark:bg-slate-900">
+               class="inline-flex items-center justify-center rounded-full border-2 border-tam-primary bg-white px-6 py-3 text-[0.85rem] font-semibold tracking-wide text-tam-primary hover:bg-tam-primarySoft transition dark:bg-slate-900">
               See Reviews
             </a>
           </div>
 
-          <p class="text-[0.75rem] text-slate-600 dark:text-slate-400">
-            Great Vancouver + Lower Mainland • Office lunches • Parties • Community events
+          <p class="text-[0.72rem] font-medium tracking-wide text-slate-600 dark:text-slate-400">
+            Greater Vancouver + Lower Mainland • Office lunches • Parties • Community events
           </p>
         </div>
 
-        <div class="fade-in rounded-3xl overflow-hidden border border-tam-border shadow-xl bg-slate-100 dark:bg-slate-800 h-[260px] md:h-[360px]">
-          <!-- Ensure /images/hero.jpg exists -->
+        <div class="fade-in rounded-3xl overflow-hidden border border-tam-border shadow-xl bg-slate-100 dark:bg-slate-800 h-[280px] md:h-[380px]">
           <img src="/images/hero.jpg" alt="Tamales Mexicanos catering spread" class="h-full w-full object-cover" />
         </div>
       </div>
     </section>
 
-    <!-- AWARD STRIP -->
-    <section class="rounded-3xl border border-tam-border bg-tam-strip p-5 md:p-6 dark:bg-slate-900">
+    <!-- AWARD STRIP (no button) -->
+    <section class="rounded-3xl border border-tam-border bg-tam-strip p-6 md:p-7 dark:bg-slate-900">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div class="flex items-center gap-4">
-          <!-- Ensure /images/cca-2025-badge.png exists -->
           <img
             src="/images/cca-2025-badge.png"
             alt="Canadian Choice Award Winner 2025 - Mexican Restaurant"
@@ -168,103 +162,105 @@ p {
           />
           <div>
             <p class="text-sm font-semibold text-slate-900 dark:text-white">Canadian Choice Award Winner (2025)</p>
-            <p class="text-xs text-slate-700 dark:text-slate-300">Winner in the category of <span class="font-semibold">Mexican Restaurant</span> — Port Coquitlam</p>
+            <p class="text-xs text-slate-700 dark:text-slate-300">
+              Winner in the category of <span class="font-semibold">Mexican Restaurant</span> — Port Coquitlam
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- REVIEWS (SHORT) -->
-    <section id="reviews" class="py-10 md:py-12">
+    <section id="reviews" class="py-14 md:py-16">
       <div class="flex items-end justify-between gap-6 flex-wrap">
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold">Top Google Reviews</h2>
-          <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Top Google Reviews</h2>
+          <p class="mt-2 max-w-[38rem] text-[0.95rem] text-slate-700 dark:text-slate-300">
             Quick highlights from real customers.
           </p>
         </div>
         <a href="https://www.google.com/search?q=Tamales+Mexicanos+Port+Coquitlam+reviews"
            target="_blank" rel="noopener"
-           class="text-xs font-semibold text-tam-primary hover:underline">
+           class="text-xs font-semibold tracking-wide text-tam-primary hover:underline">
           Read all reviews →
         </a>
       </div>
 
-      <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <article class="rounded-2xl border border-tam-border bg-tam-card p-5 shadow-md dark:bg-slate-900">
+      <div class="mt-7 grid gap-4 md:grid-cols-3">
+        <article class="rounded-2xl border border-tam-border bg-tam-card p-6 shadow-md dark:bg-slate-900">
           <p class="text-sm font-semibold">★★★★★</p>
-          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+          <p class="mt-2 text-[0.95rem] text-slate-800 dark:text-slate-100">
             “SO GOOD! 10/10… Better than the other tamales we’ve tried.”
           </p>
-          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Alisa M.</p>
+          <p class="mt-3 text-xs font-semibold tracking-wide text-slate-600 dark:text-slate-400">— Alisa M.</p>
         </article>
 
-        <article class="rounded-2xl border border-tam-border bg-tam-card p-5 shadow-md dark:bg-slate-900">
+        <article class="rounded-2xl border border-tam-border bg-tam-card p-6 shadow-md dark:bg-slate-900">
           <p class="text-sm font-semibold">★★★★★</p>
-          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+          <p class="mt-2 text-[0.95rem] text-slate-800 dark:text-slate-100">
             “Drove from Chilliwack to try this… worth every second.”
           </p>
-          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Dan M.</p>
+          <p class="mt-3 text-xs font-semibold tracking-wide text-slate-600 dark:text-slate-400">— Dan M.</p>
         </article>
 
-        <article class="rounded-2xl border border-tam-border bg-tam-card p-5 shadow-md dark:bg-slate-900">
+        <article class="rounded-2xl border border-tam-border bg-tam-card p-6 shadow-md dark:bg-slate-900">
           <p class="text-sm font-semibold">★★★★★</p>
-          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+          <p class="mt-2 text-[0.95rem] text-slate-800 dark:text-slate-100">
             “Perfect for our big church event… authentic… great experience!”
           </p>
-          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Deanna G.</p>
+          <p class="mt-3 text-xs font-semibold tracking-wide text-slate-600 dark:text-slate-400">— Deanna G.</p>
         </article>
       </div>
-<!-- PHOTO GRID (optional) -->
-<div class="mt-6">
-  <div class="flex items-end justify-between gap-4 flex-wrap">
-    <p class="text-sm font-semibold">More photos</p>
-    <p class="text-xs text-slate-600 dark:text-slate-400">Add images in /images and update the src paths.</p>
-  </div>
-  <div class="mt-3 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-    <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
-      <img src="/images/gallery-1.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
-    </figure>
-    <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
-      <img src="/images/gallery-2.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
-    </figure>
-    <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
-      <img src="/images/gallery-3.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
-    </figure>
-    <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
-      <img src="/images/gallery-4.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
-    </figure>
-  </div>
-</div>
+
+      <!-- PHOTO GRID -->
+      <div class="mt-8">
+        <div class="flex items-end justify-between gap-4 flex-wrap">
+          <p class="text-sm font-extrabold tracking-tight">More photos</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Add images in /images and update the src paths.</p>
+        </div>
+
+        <div class="mt-3 grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+          <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
+            <img src="/images/gallery-1.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
+          </figure>
+          <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
+            <img src="/images/gallery-2.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
+          </figure>
+          <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
+            <img src="/images/gallery-3.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
+          </figure>
+          <figure class="group overflow-hidden rounded-2xl border border-tam-border bg-white shadow-sm dark:bg-slate-900">
+            <img src="/images/gallery-4.jpg" alt="Tamales Mexicanos" class="h-40 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy">
+          </figure>
+        </div>
+      </div>
     </section>
 
-    <!-- PARALLAX BAND (SHORT, OPTIONAL) -->
-    <section class="relative mb-8 rounded-3xl overflow-hidden border border-tam-border shadow-inner h-28 md:h-36">
-      <!-- Ensure /images/parallax.jpg exists -->
+    <!-- PARALLAX BAND (readable text) -->
+    <section class="relative mb-10 rounded-3xl overflow-hidden border border-tam-border shadow-inner h-28 md:h-36">
       <img src="/images/parallax.jpg" alt="" class="absolute inset-0 h-full w-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-black/55"></div>
       <div class="absolute inset-0 flex items-center justify-center px-6 text-center">
-      <p class="max-w-xl text-sm md:text-base font-semibold text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.55)]">
-
+        <p class="max-w-xl text-sm md:text-base font-semibold text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.55)]">
           Handmade tamales for groups — simple to serve, hard to forget.
         </p>
       </div>
     </section>
 
     <!-- WHY + HOW (TIGHT) -->
-    <section class="grid gap-6 md:grid-cols-2 pb-10">
-      <div class="rounded-3xl border border-tam-border bg-tam-card p-6 shadow-md dark:bg-slate-900">
-        <h2 class="text-xl font-bold">Why cater with us</h2>
-        <ul class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+    <section class="grid gap-6 md:grid-cols-2 pb-14">
+      <div class="rounded-3xl border border-tam-border bg-tam-card p-7 shadow-md dark:bg-slate-900">
+        <h2 class="text-xl font-extrabold tracking-tight">Why cater with us</h2>
+        <ul class="mt-4 space-y-2 text-[0.95rem] text-slate-700 dark:text-slate-300">
           <li class="flex gap-2"><span class="font-semibold text-tam-primary">•</span> Easy to serve — buffet trays, fast setup</li>
-          <li class="flex gap-2"><span class="font-semibold text-tam-primary">•</span> Inclusive menu — gluten-free, veg &amp; vegan options</li>
+          <li class="flex gap-2"><span class="font-semibold text-tam-primary">•</span> Inclusive menu — veg &amp; vegan options</li>
           <li class="flex gap-2"><span class="font-semibold text-tam-primary">•</span> Real food — handmade, authentic, not mass-produced</li>
         </ul>
       </div>
 
-      <div class="rounded-3xl border border-tam-border bg-tam-card p-6 shadow-md dark:bg-slate-900">
-        <h2 class="text-xl font-bold">How it works</h2>
-        <ol class="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+      <div class="rounded-3xl border border-tam-border bg-tam-card p-7 shadow-md dark:bg-slate-900">
+        <h2 class="text-xl font-extrabold tracking-tight">How it works</h2>
+        <ol class="mt-4 space-y-2 text-[0.95rem] text-slate-700 dark:text-slate-300">
           <li class="flex gap-2"><span class="font-semibold text-tam-primary">1.</span> Tell us your date + guest count</li>
           <li class="flex gap-2"><span class="font-semibold text-tam-primary">2.</span> We recommend a menu + pricing</li>
           <li class="flex gap-2"><span class="font-semibold text-tam-primary">3.</span> We prepare everything fresh</li>
@@ -274,16 +270,16 @@ p {
 
     <!-- SHORT FORM (NETLIFY) -->
     <section id="catering" class="pb-16 sm:pb-12">
-      <div class="rounded-3xl border border-tam-border bg-tam-strip p-6 md:p-8 dark:bg-slate-900">
+      <div class="rounded-3xl border border-tam-border bg-tam-strip p-7 md:p-9 dark:bg-slate-900">
         <div class="flex flex-col gap-2">
-          <h2 class="text-2xl md:text-3xl font-bold">Get Catering Info</h2>
-          <p class="text-sm text-slate-700 dark:text-slate-300">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Get Catering Info</h2>
+          <p class="max-w-[38rem] text-[0.95rem] text-slate-700 dark:text-slate-300">
             Send the basics — we’ll follow up with options, availability, and pricing.
           </p>
         </div>
 
         <form
-          class="mt-6 grid gap-4"
+          class="mt-7 grid gap-4"
           name="catering"
           method="POST"
           action="/thank-you/"
@@ -297,27 +293,27 @@ p {
 
           <div class="grid gap-4 md:grid-cols-2">
             <div>
-              <label class="mb-1 block text-xs font-semibold" for="name">Name *</label>
+              <label class="mb-1 block text-xs font-semibold tracking-wide" for="name">Name *</label>
               <input id="name" name="name" type="text" required
-                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950" />
+                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950" />
             </div>
             <div>
-              <label class="mb-1 block text-xs font-semibold" for="email">Email *</label>
+              <label class="mb-1 block text-xs font-semibold tracking-wide" for="email">Email *</label>
               <input id="email" name="email" type="email" required
-                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950" />
+                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950" />
             </div>
           </div>
 
           <div class="grid gap-4 md:grid-cols-2">
             <div>
-              <label class="mb-1 block text-xs font-semibold" for="event_date">Event date (approx is fine)</label>
+              <label class="mb-1 block text-xs font-semibold tracking-wide" for="event_date">Event date (approx is fine)</label>
               <input id="event_date" name="event_date" type="date"
-                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950" />
+                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950" />
             </div>
             <div>
-              <label class="mb-1 block text-xs font-semibold" for="guests">Number of guests *</label>
+              <label class="mb-1 block text-xs font-semibold tracking-wide" for="guests">Number of guests *</label>
               <select id="guests" name="guest_count" required
-                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950">
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950">
                 <option value="">Select</option>
                 <option>10–20</option>
                 <option>21–40</option>
@@ -330,9 +326,9 @@ p {
 
           <div class="grid gap-4 md:grid-cols-2">
             <div>
-              <label class="mb-1 block text-xs font-semibold" for="event_type">Event type *</label>
+              <label class="mb-1 block text-xs font-semibold tracking-wide" for="event_type">Event type *</label>
               <select id="event_type" name="event_type" required
-                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950">
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950">
                 <option value="">Select</option>
                 <option>Office lunch</option>
                 <option>Party / family gathering</option>
@@ -341,25 +337,25 @@ p {
               </select>
             </div>
             <div>
-              <label class="mb-1 block text-xs font-semibold" for="phone">Phone (optional)</label>
+              <label class="mb-1 block text-xs font-semibold tracking-wide" for="phone">Phone (optional)</label>
               <input id="phone" name="phone" type="tel"
-                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950" />
+                     class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950" />
             </div>
           </div>
 
           <div>
-            <label class="mb-1 block text-xs font-semibold" for="notes">Dietary needs or notes</label>
+            <label class="mb-1 block text-xs font-semibold tracking-wide" for="notes">Dietary needs or notes</label>
             <textarea id="notes" name="notes" rows="3"
-                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-950"
+                      class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-[0.95rem] shadow-sm focus:outline-none focus:ring-4 focus:ring-tam-primary/15 dark:border-slate-600 dark:bg-slate-950"
                       placeholder="e.g. vegan/vegetarian count, dairy-free, allergies, any must-haves"></textarea>
           </div>
 
           <div class="flex flex-col gap-2 pt-1 sm:flex-row sm:items-center sm:justify-between">
             <button type="submit"
-                    class="inline-flex items-center justify-center rounded-full bg-tam-primary px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark transition">
+                    class="inline-flex items-center justify-center rounded-full bg-tam-primary px-6 py-3 text-[0.85rem] font-semibold tracking-wide text-white shadow-md hover:bg-tam-primaryDark transition">
               Send Request
             </button>
-            <p class="text-[0.72rem] text-slate-600 dark:text-slate-400">
+            <p class="text-[0.72rem] font-medium tracking-wide text-slate-600 dark:text-slate-400">
               No commitment — just info + availability.
             </p>
           </div>
@@ -369,7 +365,7 @@ p {
 
   </main>
 
-  <footer class="border-t border-tam-border py-6 text-center text-[0.7rem] text-slate-500 dark:text-slate-400">
+  <footer class="border-t border-tam-border py-6 text-center text-[0.7rem] font-medium tracking-wide text-slate-500 dark:text-slate-400">
     &copy; <span id="year"></span> Tamales Mexicanos.
   </footer>
 
