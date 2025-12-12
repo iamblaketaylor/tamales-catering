@@ -351,7 +351,7 @@
       <div class="grid gap-5 md:grid-cols-2 mt-5">
         <div>
           <p class="text-sm font-semibold mb-2">Date of event (approx. is okay)</p>
-          <input type="date" name="event_date" class="w-full rounded-2xl border border-tam-border px-4 py-3">
+         <input type="date" id="event_date" name="event_date" class="w-full rounded-2xl border border-tam-border px-4 py-3">
           <p class="text-xs text-slate-500 mt-2">If you’re flexible, just pick your best estimate.</p>
         </div>
 
@@ -390,6 +390,18 @@
 <footer class="py-6 text-center text-xs text-slate-500">
   © Tamales Mexicanos
 </footer>
+<script>
+  (function () {
+    const el = document.getElementById('event_date');
+    if (!el) return;
 
+    const today = new Date();
+    const yyyy = String(today.getFullYear());
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+
+    el.min = `${yyyy}-${mm}-${dd}`;
+  })();
+</script>
 </body>
 </html>
