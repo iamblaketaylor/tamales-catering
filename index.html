@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -37,7 +40,29 @@
   <style>
     @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fade-in .7s ease-out both; }
-html, body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+html, body {
+  font-family: Inter, ui-sans-serif, system-ui;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: Manrope, ui-sans-serif, system-ui;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+h2 {
+  line-height: 1.15;
+}
+
+p {
+  line-height: 1.6;
+}
+
   </style>
 </head>
 
@@ -93,15 +118,15 @@ html, body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe 
             Canadian Choice Award Winner (2025)
           </div>
 
-          <h1 class="text-3xl md:text-4xl font-bold leading-tight">
+          <h1 class="text-[2.1rem] md:text-[2.6rem] font-extrabold leading-[1.05] tracking-tight">
             Stress-Free Tamale Catering for Groups &amp; Events
           </h1>
 
-          <p class="text-base md:text-lg text-slate-800 dark:text-slate-200">
+          <p class="text-[0.95rem] md:text-[1rem] text-slate-700 dark:text-slate-300">
             Handmade, authentic tamales that are easy to serve and loved by everyone.
           </p>
 
-          <ul class="grid gap-2 text-sm text-slate-700 dark:text-slate-300">
+          <ul class="grid gap-1.5 text-[0.85rem] font-medium text-slate-700 dark:text-slate-300">
             <li class="flex gap-2"><span class="font-semibold text-tam-primary">✔</span> Delivered to you</li>
             <li class="flex gap-2"><span class="font-semibold text-tam-primary">✔</span> Meat, vegetarian &amp; vegan options</li>
             <li class="flex gap-2"><span class="font-semibold text-tam-primary">✔</span> 10 to 100+ guests</li>
