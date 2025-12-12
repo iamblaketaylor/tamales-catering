@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tamales Mexicanos Catering | Port Coquitlam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Award-winning tamale catering in Port Coquitlam. Handmade, authentic, gluten-free masa. Get a custom menu + quote for your event." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Brand palette: Purple + Mexican accents -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            tam: {
+              // Surfaces
+              bg: '#FFF7FB',
+              strip: '#FCE7F3',
+              card: '#FFFFFF',
+              border: '#E4D4F5',
+
+              // Core purple
+              primary: '#7C3AED',
+              primaryDark: '#5B21B6',
+              primarySoft: '#F3E8FF',
+
+              // Mexican accents
+              accentYellow: '#FACC15',
+              accentCoral: '#FB7185',
+              accentTeal: '#14B8A6',
+              accentGreen: '#65A30D',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Tiny custom CSS for animations + parallax -->
+  <style>
+    @keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slide-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fade-in 0.7s ease-out both; }
+    .slide-up { animation: slide-up 0.7s ease-out both; }
+    .parallax-bg { background-attachment: fixed; background-position: center; background-size: cover; }
+    @media (max-width: 768px) { .parallax-bg { background-attachment: scroll; } }
+  </style>
+</head>
+
+<body class="bg-tam-bg text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-tam-border bg-tam-bg/95 px-4 py-2 shadow-[0_-6px_20px_rgba(0,0,0,0.18)] sm:hidden dark:bg-slate-900/95">
+    <a href="#catering-form"
+       class="block w-full text-center rounded-full bg-tam-primary px-4 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg transition">
+      Plan My Catering
+    </a>
+  </div>
+
+  <!-- HEADER / NAV -->
+  <header class="bg-tam-bg/95 backdrop-blur dark:bg-slate-950/95">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <a href="#top" class="text-xs font-extrabold uppercase tracking-[0.2em]">
+        Tamales Mexicanos
+      </a>
+
+      <div class="flex items-center gap-4">
+        <button id="darkToggle"
+                class="hidden text-xs font-semibold text-slate-700 hover:text-slate-900 sm:inline-flex items-center gap-1 dark:text-slate-300 dark:hover:text-white">
+          <span class="dark:hidden">🌙 Dark</span>
+          <span class="hidden dark:inline">☀️ Light</span>
+        </button>
+
+        <a href="#catering-form"
+           class="hidden rounded-full bg-tam-primary px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg sm:inline-block transition">
+          Plan My Catering
+        </a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div id="top" class="mx-auto max-w-6xl px-4 pb-10 pt-4 md:pb-16 md:pt-10">
+      <section id="hero" class="flex flex-col items-center gap-10 md:flex-row">
+        <div class="fade-in flex-1 space-y-4">
+          <div class="inline-flex items-center gap-2 rounded-full bg-tam-primarySoft px-3 py-1 text-[0.72rem] font-semibold text-tam-primary dark:bg-slate-900">
+            <span class="inline-block h-2 w-2 rounded-full bg-tam-accentYellow"></span>
+            Award-winning Mexican Restaurant (2025) • Port Coquitlam
+          </div>
+
+          <h1 class="text-3xl font-bold leading-tight md:text-4xl">
+            Stress-Free Tamale Catering for Teams, Parties, and Events
+          </h1>
+
+          <p class="text-lg">
+            Handmade tamales with meat, vegetarian, and vegan options — made with naturally gluten-free masa and easy to serve.
+          </p>
+
+          <p class="max-w-xl text-sm text-slate-700 dark:text-slate-300">
+            Whether you’re feeding your team at the office or celebrating with friends and family, we make it simple to keep everyone full and happy.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="#catering-form"
+               class="inline-flex items-center justify-center rounded-full bg-tam-primary px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg transition">
+              Plan My Catering
+            </a>
+            <a href="#sample-menus"
+               class="inline-flex items-center justify-center rounded-full border-2 border-tam-primary bg-white px-5 py-3 text-sm font-semibold text-tam-primary hover:bg-tam-primarySoft transition dark:bg-slate-900 dark:text-tam-primary">
+              See Sample Menus
+            </a>
+          </div>
+
+          <p class="text-[0.72rem] text-slate-600 dark:text-slate-400">
+            Serving Port Coquitlam + Tri-Cities • Great for office lunches, birthdays, church/community events, and more.
+          </p>
+        </div>
+
+        <div class="slide-up flex-1 w-full rounded-3xl bg-slate-200 shadow-xl dark:bg-slate-800 h-[260px] md:h-[340px] overflow-hidden border border-tam-border">
+          <!-- Replace with your real hero image -->
+          <div class="h-full w-full bg-[url('/images/hero.jpg')] bg-cover bg-center"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CREDIBILITY STRIP -->
+    <section class="border-y border-tam-border bg-tam-strip dark:bg-slate-900">
+      <div class="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-2 px-4 py-3 text-[0.78rem] font-semibold text-slate-800 dark:text-slate-100">
+        <p>✅ Naturally gluten-free masa</p>
+        <p>🌯 Meat, vegetarian, and vegan options</p>
+        <p>👥 Great for 10–150+ guests</p>
+        <p>🧺 Easy trays for self-serve</p>
+      </div>
+    </section>
+
+    <!-- CANADIAN CHOICE AWARD STRIP -->
+    <section class="border-b border-tam-border bg-tam-bg dark:bg-slate-950">
+      <div class="mx-auto max-w-6xl px-4 py-6">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-4">
+            <img
+              src="/images/cca-2025-badge.png"
+              alt="Tamales Mexicanos - Canadian Choice Award Winner 2025 (Mexican Restaurant)"
+              class="h-16 w-auto rounded-xl shadow-md border border-tam-border bg-white"
+              loading="lazy"
+            />
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">
+                Canadian Choice Award Winner (2025)
+              </p>
+              <p class="text-xs text-slate-700 dark:text-slate-300">
+                Winner in the category of <span class="font-semibold">Mexican Restaurant</span> — Port Coquitlam
+              </p>
+              <p class="mt-1 text-[0.7rem] text-slate-600 dark:text-slate-400">
+                Authentic, handmade tamales — a local favourite.
+              </p>
+            </div>
+          </div>
+
+          <a href="#catering-form"
+             class="inline-flex items-center justify-center rounded-full bg-tam-primary px-4 py-2 text-xs font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg transition">
+            Get Catering Options
+          </a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4">
+
+    <!-- WHY CATERING -->
+    <section id="why-catering" class="py-12 md:py-16">
+      <div class="fade-in space-y-3">
+        <h2 class="text-2xl font-bold md:text-3xl">
+          Why People Keep Rebooking Our Tamale Catering
+        </h2>
+        <p class="max-w-2xl text-sm text-slate-700 dark:text-slate-300">
+          Tamales are comfort food that still feel special. They’re hearty, easy to serve, and work for almost every kind of group.
+          Instead of another forgettable tray of sandwiches, you get real food that people talk about after the event.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <article class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <h3 class="mb-2 font-semibold">Food everyone can actually eat</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            Naturally gluten-free masa, plus meat, vegetarian, and vegan fillings.
+            It’s one menu that works for a mixed group — without making anyone feel like an afterthought.
+          </p>
+        </article>
+
+        <article class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <h3 class="mb-2 font-semibold">Hearty, satisfying, and not boring</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            Proper portions, real flavour. Add rice, beans, and toppings and you’ve got a meal people remember.
+          </p>
+        </article>
+
+        <article class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <h3 class="mb-2 font-semibold">Easy for you, easy for your guests</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            Trays arrive ready to set out. Want plates, napkins, and cutlery included? Easy.
+            Guests serve themselves and the line moves fast.
+          </p>
+        </article>
+
+        <article class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <h3 class="mb-2 font-semibold">Handmade and prepared fresh</h3>
+          <p class="text-sm text-slate-700 dark:text-slate-300">
+            We prepare in small batches for your order — the kind of food we serve our own family, scaled up for your event.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PARALLAX STRIP -->
+    <section class="relative my-4 h-44 md:h-52 rounded-3xl overflow-hidden border border-tam-border shadow-inner">
+      <div class="parallax-bg h-full w-full bg-[url('/images/parallax.jpg')]"></div>
+      <div class="absolute inset-0 bg-tam-primary/20"></div>
+      <div class="absolute inset-0 flex items-center justify-center px-6 text-center">
+        <p class="text-sm md:text-base font-semibold text-white drop-shadow">
+          Handmade. Authentic. Perfect for groups.
+        </p>
+      </div>
+    </section>
+
+    <!-- SAMPLE MENUS -->
+    <section id="sample-menus" class="py-12 md:py-16">
+      <div class="fade-in space-y-3">
+        <h2 class="text-2xl font-bold md:text-3xl">
+          Simple Packages That Scale to Your Guest List
+        </h2>
+        <p class="max-w-2xl text-sm text-slate-700 dark:text-slate-300">
+          Every event is a little different, but most orders start with a mix of tamales, sides, and toppings.
+          Here are a few common setups to give you an idea. We’ll fine-tune your menu based on guest count and dietary needs.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <article class="relative bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md dark:bg-slate-900">
+          <div class="absolute left-0 top-0 h-full w-1.5 rounded-l-2xl bg-gradient-to-b from-tam-primary to-tam-accentYellow"></div>
+          <h3 class="mb-1 font-semibold">Classic Tamale Spread</h3>
+          <p class="mb-2 text-xs text-slate-700 dark:text-slate-300">Perfect for family gatherings and mixed groups.</p>
+          <ul class="list-disc space-y-1 pl-5 text-xs text-slate-700 dark:text-slate-300">
+            <li>2–3 tamale flavours</li>
+            <li>Rice and beans</li>
+            <li>Fresh salsa, crema, and toppings</li>
+          </ul>
+          <p class="mt-2 text-[0.78rem] italic text-slate-600 dark:text-slate-400">
+            Simple, crowd-pleasing, and easy to serve.
+          </p>
+        </article>
+
+        <article class="relative bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md dark:bg-slate-900">
+          <div class="absolute left-0 top-0 h-full w-1.5 rounded-l-2xl bg-gradient-to-b from-tam-primary to-tam-accentCoral"></div>
+          <h3 class="mb-1 font-semibold">Office Lunch Package</h3>
+          <p class="mb-2 text-xs text-slate-700 dark:text-slate-300">Designed for teams who want better than pizza.</p>
+          <ul class="list-disc space-y-1 pl-5 text-xs text-slate-700 dark:text-slate-300">
+            <li>Mix of meat &amp; veg/vegan tamales</li>
+            <li>Rice, beans, toppings</li>
+            <li>Clear dietary labelling</li>
+          </ul>
+          <p class="mt-2 text-[0.78rem] italic text-slate-600 dark:text-slate-400">
+            Quick setup, easy cleanup, everyone’s happy.
+          </p>
+        </article>
+
+        <article class="relative bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md dark:bg-slate-900">
+          <div class="absolute left-0 top-0 h-full w-1.5 rounded-l-2xl bg-gradient-to-b from-tam-primary to-tam-accentTeal"></div>
+          <h3 class="mb-1 font-semibold">Party &amp; Celebration Spread</h3>
+          <p class="mb-2 text-xs text-slate-700 dark:text-slate-300">For birthdays, holidays, and bigger celebrations.</p>
+          <ul class="list-disc space-y-1 pl-5 text-xs text-slate-700 dark:text-slate-300">
+            <li>3+ flavours, extra sides &amp; toppings</li>
+            <li>Optional chips &amp; salsa, extra trays</li>
+            <li>Great for larger groups</li>
+          </ul>
+          <p class="mt-2 text-[0.78rem] italic text-slate-600 dark:text-slate-400">
+            A fuller spread for when food is a big part of the event.
+          </p>
+        </article>
+      </div>
+
+      <p class="mt-5 text-xs text-slate-600 dark:text-slate-400">
+        Most catering orders fall between <span class="font-semibold">$X–$Y per person</span>, depending on your menu, guest count, and service style.
+      </p>
+    </section>
+
+    <!-- TOP GOOGLE REVIEWS -->
+    <section id="reviews" class="py-12 md:py-16 border-t border-slate-200/70 dark:border-slate-800">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <h2 class="text-2xl font-bold md:text-3xl">Top Google Reviews</h2>
+          <p class="mt-2 max-w-2xl text-sm text-slate-700 dark:text-slate-300">
+            People drive out of their way for these tamales — and they’re a hit for parties, office lunches, and events.
+          </p>
+        </div>
+
+        <a href="https://www.google.com/search?q=Tamales+Mexicanos+Port+Coquitlam+reviews"
+           target="_blank" rel="noopener"
+           class="text-xs font-semibold text-tam-primary hover:underline">
+          Read all reviews →
+        </a>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <article class="bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold">★★★★★</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">7 months ago</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+            “SO GOOD! 10/10, me and my friend loved it. Better than the other tamales we’ve tried.
+            We got one pork tamale and one chicken, with spicy sauce and sour cream.”
+          </p>
+          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Alisa M.</p>
+        </article>
+
+        <article class="bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold">★★★★★</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">9 months ago</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+            “Absolutely incredible, never had a tamale but I sure as hell will be eating A LOT more.
+            Drove from Chilliwack to try this… worth every second.”
+          </p>
+          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Dan M.</p>
+        </article>
+
+        <article class="bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold">★★★★★</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">8 months ago</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+            “Best tamales ever, absolutely delicious. We always stop here on our way home from Vancouver.
+            The chicken ones are my favourite! I could eat these all day everyday.”
+          </p>
+          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Carissa T.</p>
+        </article>
+
+        <article class="bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold">★★★★★</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">10 months ago</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+            “I am so glad to have a place in Poco that sells high quality tamales!
+            They remind me of the ones back home 🇲🇽”
+          </p>
+          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Dení G. (Local Guide)</p>
+        </article>
+
+        <article class="bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold">★★★★★</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">2 months ago</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+            “We had a big church event and Tamales Mexicanos were fantastic! Cesar and Carolina are so kind and make very delicious food.
+            My husband is from Mexico so I can also report that they are authentic as well. Great people, great food, great experience!”
+          </p>
+          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Deanna G.</p>
+        </article>
+
+        <article class="bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transition dark:bg-slate-900">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-semibold">★★★★★</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">2 months ago</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-800 dark:text-slate-100">
+            “Always great, my 9 year old looks forward to his weekly farmers market treat!
+            Pork with red Chile sauce is AMAZING!”
+          </p>
+          <p class="mt-3 text-xs text-slate-600 dark:text-slate-400">— Wilbur &amp; Sabastian’s (Local Guide)</p>
+        </article>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-tam-border bg-tam-strip p-5 text-sm text-slate-700 dark:bg-slate-900 dark:text-slate-300">
+        <p class="font-semibold text-slate-900 dark:text-white">Planning catering?</p>
+        <p class="mt-1">
+          Tell us your guest count, dietary needs, and whether you want plates/cutlery —
+          we’ll recommend a menu and portions that actually make sense.
+        </p>
+        <a href="#catering-form"
+           class="mt-4 inline-flex items-center justify-center rounded-full bg-tam-primary px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg transition">
+          Start My Catering Request
+        </a>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-12 md:py-16">
+      <div class="fade-in space-y-3">
+        <h2 class="text-2xl font-bold md:text-3xl">How Our Catering Works</h2>
+        <p class="max-w-2xl text-sm text-slate-700 dark:text-slate-300">
+          We keep it simple so you can focus on your event, not the food.
+        </p>
+      </div>
+
+      <ol class="mt-8 grid gap-4">
+        <li class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md dark:bg-slate-900">
+          <h3 class="mb-1 font-semibold">Step 1 – Tell us about your event</h3>
+          <p class="text-xs text-slate-700 dark:text-slate-300">
+            Share your date, guest count, location, and dietary needs in the form below.
+          </p>
+        </li>
+        <li class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md dark:bg-slate-900">
+          <h3 class="mb-1 font-semibold">Step 2 – We recommend a menu &amp; quote</h3>
+          <p class="text-xs text-slate-700 dark:text-slate-300">
+            We’ll suggest a mix of tamales, sides, and add-ons that fit your group and send a clear estimate.
+          </p>
+        </li>
+        <li class="slide-up bg-tam-card border border-tam-border rounded-2xl p-5 shadow-md dark:bg-slate-900">
+          <h3 class="mb-1 font-semibold">Step 3 – We cook, you enjoy</h3>
+          <p class="text-xs text-slate-700 dark:text-slate-300">
+            On the day of your event, we prepare everything fresh for pickup or delivery (where available).
+          </p>
+        </li>
+      </ol>
+
+      <a href="#catering-form"
+         class="mt-6 inline-flex items-center justify-center rounded-full bg-tam-primary px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg transition">
+        Start My Catering Request
+      </a>
+    </section>
+
+    <!-- FORM (NETLIFY FORMS READY) -->
+    <section id="catering-form" class="py-12 md:py-16 border-t border-slate-200/70 dark:border-slate-800">
+      <h2 class="text-2xl font-bold md:text-3xl">Start Your Catering Request</h2>
+      <p class="mt-2 max-w-xl text-sm text-slate-700 dark:text-slate-300">
+        Tell us a bit about your event and we’ll recommend a menu, portions, and a clear quote.
+      </p>
+
+      <form
+        name="catering"
+        method="POST"
+        action="/thank-you/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="mt-6 space-y-8 rounded-3xl border border-tam-border bg-tam-card p-6 shadow-md dark:bg-slate-900"
+      >
+        <!-- Netlify required hidden input -->
+        <input type="hidden" name="form-name" value="catering" />
+
+        <!-- Honeypot field (hidden) -->
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+
+        <!-- Step 1 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold">Step 1 of 4 – Tell Us About Your Event</legend>
+
+          <div>
+            <label for="event-type" class="mb-1 block text-xs font-semibold">What kind of event are you planning?</label>
+            <select id="event-type" name="event_type" required
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>Office lunch</option>
+              <option>Holiday party</option>
+              <option>Birthday or family gathering</option>
+              <option>Wedding or reception</option>
+              <option>Community or school event</option>
+              <option>Church / community event</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label for="event-date" class="mb-1 block text-xs font-semibold">Event date</label>
+              <input id="event-date" name="event_date" type="date"
+                     class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950" />
+              <p class="mt-1 text-[0.7rem] text-slate-500 dark:text-slate-400">
+                Approximate is fine if you’re still deciding.
+              </p>
+            </div>
+            <div>
+              <label for="event-time" class="mb-1 block text-xs font-semibold">Event time</label>
+              <input id="event-time" name="event_time" type="time"
+                     class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950" />
+            </div>
+          </div>
+
+          <div>
+            <label for="event-location" class="mb-1 block text-xs font-semibold">Event location (city/area)</label>
+            <input id="event-location" name="event_location" type="text"
+                   class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950"
+                   placeholder="e.g. Port Coquitlam, Coquitlam, Port Moody…" />
+          </div>
+
+          <div>
+            <label for="guest-count" class="mb-1 block text-xs font-semibold">How many people are you expecting?</label>
+            <select id="guest-count" name="guest_count" required
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>10–20</option>
+              <option>21–40</option>
+              <option>41–60</option>
+              <option>61–100</option>
+              <option>100+</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold">Step 2 of 4 – Food &amp; Dietary Needs</legend>
+
+          <div>
+            <p class="mb-1 text-xs font-semibold">Dietary needs (check any that apply)</p>
+            <p class="mb-2 text-[0.7rem] text-slate-500 dark:text-slate-400">
+              This helps us recommend fillings and sides that work for everyone.
+            </p>
+            <div class="grid gap-1 text-[0.75rem]">
+              <label class="flex items-center gap-2"><input type="checkbox" name="diet_needs[]" value="No major restrictions" class="h-3 w-3 rounded border-slate-400">No major restrictions</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="diet_needs[]" value="Gluten-free" class="h-3 w-3 rounded border-slate-400">Need gluten-free options</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="diet_needs[]" value="Vegetarian" class="h-3 w-3 rounded border-slate-400">Need vegetarian options</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="diet_needs[]" value="Vegan" class="h-3 w-3 rounded border-slate-400">Need vegan options</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="diet_needs[]" value="Dairy-free" class="h-3 w-3 rounded border-slate-400">Need dairy-free options</label>
+              <label class="flex items-center gap-2"><input type="checkbox" name="diet_needs[]" value="Not sure" class="h-3 w-3 rounded border-slate-400">Not sure yet</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="variety" class="mb-1 block text-xs font-semibold">How much variety would you like?</label>
+            <select id="variety" name="variety"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>Simple menu (1–2 tamale options, classic sides)</option>
+              <option>Good variety (3+ options, sides, and toppings)</option>
+              <option>Not sure — please recommend</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="tableware" class="mb-1 block text-xs font-semibold">Do you want plates, napkins, and cutlery included?</label>
+            <select id="tableware" name="tableware"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>Yes, please include everything</option>
+              <option>No, we’ll provide our own</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="allergies" class="mb-1 block text-xs font-semibold">Allergies or notes</label>
+            <textarea id="allergies" name="allergies" rows="3"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950"
+                      placeholder="e.g. no dairy, nut allergy, separate vegan tray…"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Step 3 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold">Step 3 of 4 – Service &amp; Budget</legend>
+
+          <div>
+            <label for="service-style" class="mb-1 block text-xs font-semibold">How should the food be served?</label>
+            <select id="service-style" name="service_style"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>Buffet-style trays for self-serve</option>
+              <option>Individual portions (if available)</option>
+              <option>Not sure — please recommend</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="delivery" class="mb-1 block text-xs font-semibold">Delivery or pickup?</label>
+            <select id="delivery" name="delivery"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>Delivery to my location (if available)</option>
+              <option>Pickup from Tamales Mexicanos</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="budget" class="mb-1 block text-xs font-semibold">Budget preference</label>
+            <select id="budget" name="budget"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>Most budget-friendly option</option>
+              <option>Good variety, still value-conscious</option>
+              <option>Happy to invest in a premium spread</option>
+              <option>Not sure — show me what makes sense</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="event-notes" class="mb-1 block text-xs font-semibold">Anything else we should know?</label>
+            <textarea id="event-notes" name="event_notes" rows="3"
+                      class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950"
+                      placeholder="e.g. staff appreciation lunch, timing notes, setup constraints…"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- Step 4 -->
+        <fieldset class="space-y-4">
+          <legend class="text-lg font-semibold">Step 4 of 4 – Contact Details</legend>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <label for="name" class="mb-1 block text-xs font-semibold">Name</label>
+              <input id="name" name="name" type="text" required
+                     class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950" />
+            </div>
+            <div>
+              <label for="email" class="mb-1 block text-xs font-semibold">Email</label>
+              <input id="email" name="email" type="email" required
+                     class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950" />
+            </div>
+          </div>
+
+          <div>
+            <label for="phone" class="mb-1 block text-xs font-semibold">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel"
+                   class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950" />
+          </div>
+
+          <div>
+            <p class="mb-1 text-xs font-semibold">Best way to reach you</p>
+            <div class="flex flex-wrap gap-3 text-[0.75rem]">
+              <label class="inline-flex items-center gap-1"><input type="radio" name="contact_method" value="Email" checked class="h-3 w-3">Email</label>
+              <label class="inline-flex items-center gap-1"><input type="radio" name="contact_method" value="Phone call" class="h-3 w-3">Phone call</label>
+              <label class="inline-flex items-center gap-1"><input type="radio" name="contact_method" value="Text message" class="h-3 w-3">Text message</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="response-time" class="mb-1 block text-xs font-semibold">When do you need a response by?</label>
+            <select id="response-time" name="response_time"
+                    class="w-full rounded-xl border border-slate-300 px-3 py-2 text-xs dark:border-slate-600 dark:bg-slate-950">
+              <option value="">Please select</option>
+              <option>ASAP (within 24 hours if possible)</option>
+              <option>Sometime this week is fine</option>
+              <option>I’m just exploring options</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <div class="border-t border-slate-200 pt-4 text-xs text-slate-600 dark:border-slate-700 dark:text-slate-400">
+          <button type="submit"
+                  class="mb-2 inline-flex items-center justify-center rounded-full bg-tam-primary px-5 py-3 text-sm font-semibold text-white shadow-md hover:bg-tam-primaryDark hover:shadow-lg transition">
+            Get My Catering Recommendation
+          </button>
+          <p class="text-[0.7rem]">
+            We’ll only use your information to follow up about this catering request and help plan your event.
+          </p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="mt-8 border-t border-slate-200/70 py-6 text-center text-[0.7rem] text-slate-500 dark:border-slate-800 dark:text-slate-400">
+    &copy; <span id="year"></span> Tamales Mexicanos. All rights reserved.
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark mode toggle with persistence
+    const toggle = document.getElementById('darkToggle');
+    const root = document.documentElement;
+
+    if (localStorage.getItem('tamales-theme') === 'dark') {
+      root.classList.add('dark');
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        root.classList.toggle('dark');
+        localStorage.setItem('tamales-theme', root.classList.contains('dark') ? 'dark' : 'light');
+      });
+    }
+  </script>
+</body>
+</html>
