@@ -101,7 +101,8 @@ src="https://www.facebook.com/tr?id=997976820352698&ev=PageView&noscript=1"
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="leading-snug">
           <p class="text-sm font-extrabold tracking-tight">
-            🎄 Holiday Special (limited time): FREE horchata with all catered deliveries
+            🎄 Holiday Special (limited time): FREE 5L of horchata (≈20 drinks) with catered deliveries
+
           </p>
           <p class="text-xs text-white/90">
             Availability fills fast — claim it for your event while it’s still on.
@@ -343,8 +344,13 @@ src="https://www.facebook.com/tr?id=997976820352698&ev=PageView&noscript=1"
       <label class="flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 mb-5">
         <input type="checkbox" name="horchata_opt_in" value="YES" class="mt-1 h-4 w-4">
         <div class="leading-snug">
-          <p class="text-sm font-extrabold text-red-700">YES — I want free horchata for this event</p>
-          <p class="text-xs text-slate-600">Holiday offer (limited time). We’ll confirm it with your delivery.</p>
+          <p class="text-sm font-extrabold text-red-700">
+  YES — I want the FREE 5L of horchata (≈20 drinks) for this event
+</p>
+<p class="text-xs text-slate-600">
+  Holiday offer (limited time). We’ll confirm availability with your delivery.
+</p>
+
         </div>
       </label>
 
@@ -355,9 +361,29 @@ src="https://www.facebook.com/tr?id=997976820352698&ev=PageView&noscript=1"
         </div>
 
         <div>
-          <p class="text-sm font-semibold mb-2">Email *</p>
-          <input required type="email" name="email" class="w-full rounded-2xl border border-tam-border px-4 py-3" placeholder="you@email.com">
-        </div>
+  <p class="text-sm font-semibold mb-2">Email *</p>
+  <input
+    required
+    type="email"
+    name="email"
+    id="email"
+    class="w-full rounded-2xl border border-tam-border px-4 py-3"
+    placeholder="you@email.com"
+  >
+</div>
+
+<div>
+  <p class="text-sm font-semibold mb-2">Confirm email *</p>
+  <input
+    required
+    type="email"
+    name="confirm_email"
+    class="w-full rounded-2xl border border-tam-border px-4 py-3"
+    placeholder="Re-enter your email"
+    oninput="this.setCustomValidity(this.value !== document.getElementById('email').value ? 'Email addresses must match' : '')"
+  >
+</div>
+
       </div>
 
       <div class="mt-5">
